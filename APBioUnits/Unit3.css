@@ -1,0 +1,55 @@
+body{
+    font-size: 150%;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    background-color: darkcyan;
+}
+
+.main{
+    border: 5px solid white;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#enzyme{
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+#energy{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#photosynthesis{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#fixation{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#respiration{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2.5%;
+}
+
+#fermentationtable{
+    overflow: auto;
+}
+
+#calvin{
+    overflow: auto;
+}
+
+#respirationimg{
+    overflow: auto;
+}

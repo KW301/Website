@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+    font-size: large;
+}
+#Topic{
+    text-shadow: -5px -5px lightgrey;
+}
+#alberto{
+    text-shadow: 3px 3px red, -3px -3px blue;
+}
+#Bio{
+    font-size: x-large;
+    text-shadow: -3px -3px lightgrey;
+}

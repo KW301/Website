@@ -1,0 +1,38 @@
+body{
+    background-color: darkcyan;
+    font-size: 150%;
+    margin-top: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2.5%;
+    text-align: center;
+}
+
+.side{
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#bonds{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#water{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#acid{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#macromolecules{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
+}

@@ -1,0 +1,38 @@
+body{
+    background-color: darkcyan;
+    text-align: center;
+    font-size: 150%;
+    margin-top: 2.5%;
+    margin-bottom: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.main{
+    border: 5px solid white;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    overflow: hidden;
+}
+
+#organelle{
+    overflow: auto;
+}
+
+#cells{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#transport{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#SVR{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
+}
