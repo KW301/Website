@@ -1,0 +1,26 @@
+body{
+    font-size: 150%;
+    text-align: center;
+    background-color: darkcyan;
+}
+
+.main{
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#break{
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+}   
+
+#keyconcepts{
+    margin-right: 5%;
+    margin-left: 5%;
+}
