@@ -1,39 +1,68 @@
 body{
-
+    font-size: 150%;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    background-color: darkcyan;
 }
 
 .main{
-    
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#break{
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 #img{
     overflow: auto;
+    
 }
 
 #SignalTransductionPathway{
-
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 #signals{
-
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 #feedback{
-
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #binaryfission{
-    
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #cellcycle{
-    
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #meiosis{
-
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #mitosis{
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
+#controls{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
 }
