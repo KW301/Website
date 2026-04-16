@@ -13,6 +13,10 @@ body{
     margin-left: 5%;
 }
 
+#img{
+    overflow: auto;
+}
+
 #break{
     border: 2px solid grey;
     border-radius: 15px;
@@ -21,6 +25,11 @@ body{
 }   
 
 #keyconcepts{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#SexDetermination&Linkage{
     margin-right: 5%;
     margin-left: 5%;
 }
