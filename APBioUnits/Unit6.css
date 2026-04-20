@@ -12,3 +12,10 @@ body{
     margin-right: 5%;
     margin-left: 5%;
 }
+
+#break{
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+} 
