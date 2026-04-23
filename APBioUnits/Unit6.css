@@ -13,9 +13,68 @@ body{
     margin-left: 5%;
 }
 
+.Part1{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.Part2{
+    border: 2px solid #5c5c5c;
+    border-radius: 10px;
+    background-color: darkgray;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#Part2-Text{
+    font-size: 90%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.Part3{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.Part4{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.Bacteria{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#List1{
+    border: 2px solid darkgray;
+    border-radius: 15px;
+    background-color: darkgray;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    font-size: 75%;
+}
+
+#List2{
+    border: 2px solid white;
+    border-radius: 15px;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    font-size: 80%;
+}
+
+li{
+    margin: 1%;
+}
+
 #break{
     border: 2px solid grey;
     border-radius: 15px;
     margin-left: 5%;
     margin-right: 5%;
-} 
+}
