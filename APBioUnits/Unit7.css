@@ -1,14 +1,46 @@
 body{
-    font-size: 150%;
-    text-align: center;
-    background-color: darkcyan;
+	font-size: 150%;
+	text-align: center;
+	background-color: darkcyan;
 }
 
 .main{
-    border: 2px solid white;
-    border-radius: 15px;
-    background-color: white;
-    margin-top: 2.5%;
-    margin-right: 5%;
-    margin-left: 5%;
+	border: 2px solid white;
+	border-radius: 15px;
+	background-color: white;
+	margin-top: 2.5%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 2.5%;
+}
+
+.Part1{
+	border: 2px solid #5c5c5c;
+	background-color: darkgrey;
+	border-radius: 15px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.Part2{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 2.5%;
+}
+
+.Part2-Text{
+	text-align: left;
+}
+
+.Evo-Types{
+	text-align: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#break{
+	border: 2px solid grey;
+	border-radius: 15px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
