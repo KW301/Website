@@ -1,17 +1,475 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP US Gov — 5 Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f8f6f1;
+  --surface: #ffffff;
+  --card: #fffef9;
+  --navy: #12213b;
+  --navy2: #1c3158;
+  --gold: #b8860b;
+  --gold-light: #f0e6c0;
+  --red: #9b2335;
+  --red-light: #fdf0f2;
+  --green: #1a6b3c;
+  --green-light: #edf7f2;
+  --blue: #1a4f7a;
+  --blue-light: #e8f1f8;
+  --purple: #4a2d82;
+  --purple-light: #f0ebf8;
+  --border: #e0dbd0;
+  --border2: #d0c8b8;
+  --text: #1a1a1a;
+  --muted: #5a5a5a;
+  --light: #8a8a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;}
 
-<html>
-    <header>
-        <head>
-            <link rel="stylesheet" href="APGov.css">
-            <title>AP Government Review</title>
-        </head>
-    </header>
-    <body>
-        <h1>AP Government Review</h1>
-    </body>
-    <hr id="break">
-    <div class="main">
-        
-    </div>
-</html>
+/* NAV */
+.topbar{background:var(--navy);color:#fff;display:flex;align-items:center;gap:0;padding:0 1.5rem;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:200;border-bottom:3px solid var(--gold);}
+.topbar::-webkit-scrollbar{display:none;}
+.topbar-brand{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--gold);white-space:nowrap;padding:12px 1.5rem 12px 0;border-right:1px solid rgba(255,255,255,.1);margin-right:.5rem;flex-shrink:0;}
+.topbar a{color:rgba(255,255,255,.65);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:14px 12px;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-3px;transition:color .2s,border-color .2s;}
+.topbar a:hover,.topbar a.active{color:#fff;border-bottom-color:var(--gold);}
+
+/* HERO */
+.hero{background:var(--navy);color:#fff;padding:3.5rem 3rem 2.5rem;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:0;top:0;width:300px;height:100%;background:linear-gradient(to right,transparent,rgba(184,134,11,.07));pointer-events:none;}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;font-weight:400;}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero p{color:rgba(255,255,255,.6);margin-top:.8rem;max-width:620px;font-size:14px;font-weight:300;}
+.chip-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.5rem;}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:3px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.05em;}
+
+/* MAIN */
+main{max-width:1060px;margin:0 auto;padding:2rem 1.5rem 6rem;}
+
+/* UNIT HEADERS */
+.unit-head{display:flex;align-items:baseline;gap:1rem;margin:3rem 0 1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--navy);}
+.unit-tag{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:3px;flex-shrink:0;}
+.tag-navy{background:var(--navy);color:#fff;}
+.tag-red{background:var(--red);color:#fff;}
+.tag-green{background:var(--green);color:#fff;}
+.tag-blue{background:var(--blue);color:#fff;}
+.tag-purple{background:var(--purple);color:#fff;}
+.tag-gold{background:var(--gold);color:#fff;}
+.unit-head h2{font-family:'DM Serif Display',serif;font-size:1.7rem;font-weight:400;color:var(--navy);}
+.exam-pct{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--light);margin-left:auto;}
+
+/* SECTION LABELS */
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:1.5rem 0 .8rem;padding-left:.5rem;border-left:3px solid var(--border2);}
+
+/* GRID */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;}
+@media(max-width:720px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.2rem 1.4rem;}
+.card-head{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem;}
+
+/* CONCEPT BLOCK */
+.concept{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem 1.2rem;margin-bottom:.6rem;}
+.concept-term{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:.2rem;}
+.concept-def{font-size:13.5px;color:var(--muted);line-height:1.6;}
+.concept-def strong{color:var(--text);font-weight:600;}
+.concept-def em{color:var(--red);font-style:normal;font-weight:500;}
+.concept-why{font-size:12px;color:var(--gold);font-family:'JetBrains Mono',monospace;font-weight:600;letter-spacing:.04em;margin-top:.4rem;display:block;}
+
+/* VOCAB TABLE */
+.vocab-table{width:100%;border-collapse:collapse;}
+.vocab-table tr{border-bottom:1px solid var(--border);}
+.vocab-table tr:last-child{border-bottom:none;}
+.vocab-table td{padding:.7rem .8rem;vertical-align:top;font-size:13.5px;}
+.vocab-table td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--navy);width:190px;padding-right:1rem;}
+.vocab-table td:last-child{color:var(--muted);line-height:1.6;}
+.vocab-table td:last-child strong{color:var(--text);}
+
+/* CASE CARD */
+.case-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 6px 6px 0;padding:1rem 1.2rem;margin-bottom:.7rem;}
+.case-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--navy);margin-bottom:.15rem;}
+.case-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--light);margin-left:.5rem;}
+.case-issue{font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:600;letter-spacing:.04em;margin-bottom:.3rem;text-transform:uppercase;}
+.case-hold{font-size:13.5px;color:var(--muted);line-height:1.6;}
+.case-hold strong{color:var(--text);}
+.case-hold em{color:var(--red);font-style:normal;font-weight:600;}
+.case-connect{font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;margin-top:.4rem;display:block;font-weight:500;}
+
+/* DOC CARD */
+.doc-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:1rem 1.2rem;margin-bottom:.7rem;}
+.doc-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--navy);}
+.doc-author{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--light);}
+.doc-arg{font-size:13.5px;color:var(--muted);margin-top:.4rem;line-height:1.6;}
+.doc-arg strong{color:var(--text);}
+.doc-arg em{color:var(--blue);font-style:normal;font-weight:600;}
+.doc-exam{font-size:12px;color:var(--red);font-family:'JetBrains Mono',monospace;margin-top:.4rem;display:block;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+
+/* AMENDMENT TABLE */
+.amend-table{width:100%;border-collapse:collapse;}
+.amend-table tr{border-bottom:1px solid var(--border);}
+.amend-table tr:last-child{border-bottom:none;}
+.amend-table td{padding:.65rem .8rem;vertical-align:top;font-size:13.5px;}
+.amend-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--navy);width:36px;}
+.amend-name{font-weight:600;color:var(--text);width:200px;}
+.amend-full{color:var(--muted);line-height:1.6;}
+.amend-full strong{color:var(--text);}
+.amend-full em{color:var(--red);font-style:normal;font-weight:500;}
+
+/* FRQ */
+.frq-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1rem;}
+.frq-badge{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:3px;display:inline-block;margin-bottom:.8rem;}
+.b-navy{background:var(--navy);color:#fff;}
+.b-red{background:var(--red);color:#fff;}
+.b-green{background:var(--green);color:#fff;}
+.b-gold{background:var(--gold);color:#fff;}
+.frq-box h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:.4rem;}
+.frq-desc{font-size:13.5px;color:var(--muted);margin-bottom:1rem;line-height:1.6;}
+.step{display:flex;gap:.9rem;margin-bottom:.7rem;align-items:flex-start;}
+.step-n{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);background:var(--gold-light);border:1px solid var(--gold);border-radius:4px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-text{font-size:13.5px;color:var(--text);line-height:1.6;}
+.step-text strong{color:var(--navy);}
+.step-text em{color:var(--red);font-style:italic;}
+
+/* RUBRIC */
+.rubric-row{display:flex;justify-content:space-between;align-items:center;padding:.55rem .8rem;background:var(--bg);border:1px solid var(--border);border-radius:4px;margin-bottom:.35rem;font-size:13.5px;}
+.rubric-pts{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--navy);background:var(--gold-light);padding:2px 8px;border-radius:3px;}
+
+/* TIP */
+.tip{background:var(--gold-light);border:1px solid rgba(184,134,11,.3);border-left:4px solid var(--gold);border-radius:0 5px 5px 0;padding:.7rem 1rem;font-size:13.5px;color:var(--text);margin-bottom:.6rem;line-height:1.6;}
+.tip strong{color:var(--gold);font-weight:700;}
+.tip.danger{background:var(--red-light);border-color:rgba(155,35,53,.3);border-left-color:var(--red);}
+.tip.danger strong{color:var(--red);}
+.tip.ok{background:var(--green-light);border-color:rgba(26,107,60,.3);border-left-color:var(--green);}
+.tip.ok strong{color:var(--green);}
+
+/* CHECKS TABLE */
+.checks-table{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;}
+@media(max-width:720px){.checks-table{grid-template-columns:1fr;}}
+.checks-col{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.checks-head{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem;padding:.3rem .6rem;border-radius:3px;display:inline-block;}
+.checks-col ul{list-style:none;}
+.checks-col ul li{font-size:13px;color:var(--muted);padding:.3rem 0;border-bottom:1px solid var(--border);display:flex;gap:.5rem;align-items:flex-start;}
+.checks-col ul li:last-child{border-bottom:none;}
+.checks-col ul li::before{content:'→';color:var(--light);flex-shrink:0;}
+
+.divider{border:none;border-top:2px solid var(--border);margin:2rem 0;}
+
+/* IDEOLOGY GRID */
+.ideology-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.1rem;}
+.ideology-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:3px;display:inline-block;margin-bottom:.6rem;}
+.ideo-blue{background:#dbeafe;color:#1d4ed8;}
+.ideo-red{background:#fee2e2;color:#b91c1c;}
+.ideo-yellow{background:#fef9c3;color:#854d0e;}
+.ideo-gray{background:#f3f4f6;color:#374151;}
+.ideology-card ul{list-style:none;}
+.ideology-card ul li{font-size:13px;color:var(--muted);padding:.28rem 0;border-bottom:1px solid var(--border);display:flex;gap:.5rem;}
+.ideology-card ul li:last-child{border-bottom:none;}
+.ideology-card ul li::before{content:'•';color:var(--light);}
+
+/* SCORE BAR */
+.score-visual{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:1.2rem;margin-bottom:1rem;}
+.score-visual h4{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--navy);margin-bottom:.8rem;}
+.score-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;}
+.score-label{font-size:13px;color:var(--muted);flex:1;}
+.score-bar-wrap{flex:2;background:var(--border);border-radius:2px;height:6px;overflow:hidden;}
+.score-bar-fill{height:100%;border-radius:2px;background:var(--navy);}
+.score-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);width:24px;text-align:right;}
+
+/* SCROLL UP */
+.scroll-top{position:fixed;bottom:2rem;right:2rem;background:var(--navy);color:var(--gold);border:none;border-radius:4px;width:36px;height:36px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;z-index:100;}
+
+/* PRINT / ACCENT HELPERS */
+.highlight{background:var(--gold-light);padding:1px 4px;border-radius:2px;font-weight:600;color:var(--navy);}
+.tag-inline{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:1px 6px;border-radius:3px;display:inline-block;vertical-align:middle;margin-left:.3rem;}
+.t-red{background:var(--red-light);color:var(--red);}
+.t-green{background:var(--green-light);color:var(--green);}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-brand">AP Gov · Score 5</div>
+  <a href="#u1">Unit 1</a>
+  <a href="#u2">Unit 2</a>
+  <a href="#u3">Unit 3</a>
+  <a href="#u4">Unit 4</a>
+  <a href="#u5">Unit 5</a>
+  <a href="#docs">Docs</a>
+  <a href="#cases">Cases</a>
+  <a href="#amend">Amendments</a>
+  <a href="#frq">FRQ</a>
+  <a href="#tips">Points</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">AP United States Government & Politics · Complete 5-Guide</div>
+  <h1>Everything You Need<br>to Score a <em>5</em></h1>
+  <p>Full explanations — not just labels. Every term defined so you actually understand it, every case explained, every FRQ type broken down with scoring rubrics.</p>
+  <div class="chip-row">
+    <div class="chip">Units 1–5 Full</div>
+    <div class="chip">15 Required Docs</div>
+    <div class="chip">15 Required Cases</div>
+    <div class="chip">All 27 Amendments</div>
+    <div class="chip">FRQ Rubrics</div>
+    <div class="chip">Scoring Tips</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 1
+════════════════════════════════════════════════════════ -->
+<div id="u1" class="unit-head">
+  <span class="unit-tag tag-navy">Unit 1</span>
+  <h2>Foundations of American Democracy</h2>
+  <span class="exam-pct">~15–22% of exam</span>
+</div>
+
+<div class="section-label">Core Philosophical Foundations</div>
+
+<div class="grid-2">
+<div>
+<div class="concept">
+  <div class="concept-term">Natural Rights (John Locke)</div>
+  <div class="concept-def">The idea that people are born with rights that <strong>no government can legitimately take away</strong>. Locke identified them as <strong>life, liberty, and property</strong>. Jefferson adapted this in the Declaration as "life, liberty, and the pursuit of happiness." The key implication: if government violates these rights, people have the right to overthrow it.</div>
+  <span class="concept-why">★ FRQ link → Declaration of Independence, social contract, justification for revolution</span>
+</div>
+<div class="concept">
+  <div class="concept-term">Social Contract</div>
+  <div class="concept-def">The theory (Locke, Rousseau) that people <strong>voluntarily give up some freedoms</strong> to a government in exchange for protection of their remaining rights. Critical point: the government only has legitimate authority as long as it upholds its end — protecting the people. If it fails, the people may dissolve it. This is the philosophical basis for the Declaration of Independence.</div>
+  <span class="concept-why">★ Always connect this to popular sovereignty and limited government</span>
+</div>
+<div class="concept">
+  <div class="concept-term">Popular Sovereignty</div>
+  <div class="concept-def">The principle that <strong>all governmental authority comes from the people</strong>. The government governs only with the consent of the governed. In the U.S., this is expressed through elections, representation, and the amendment process. It's why "We the People" opens the Constitution.</div>
+</div>
+<div class="concept">
+  <div class="concept-term">Limited Government</div>
+  <div class="concept-def">Government power is <strong>restricted by law</strong> — the Constitution defines what government can and cannot do. No official is above the law. This is operationalized through separation of powers, checks and balances, and the Bill of Rights. Opposite of arbitrary/tyrannical government.</div>
+</div>
+</div>
+<div>
+<div class="concept">
+  <div class="concept-term">Articles of Confederation (1777) — Why It Failed</div>
+  <div class="concept-def">The U.S.'s first government. It was deliberately weak because the founders feared a strong central government (they had just escaped one). <strong>Fatal weaknesses:</strong> Congress could not tax (had to beg states), could not regulate interstate/foreign commerce, no executive to enforce laws, no federal judiciary, each state had one vote regardless of size, required unanimous consent of all 13 states to amend, and could not draft soldiers. <em>Shays' Rebellion (1786–87)</em> — an armed uprising of Massachusetts farmers — exposed how powerless the federal government was to maintain order. This convinced leaders a new framework was needed.</div>
+  <span class="concept-why">★ Know all the weaknesses — the Constitution was designed to fix each one</span>
+</div>
+<div class="concept">
+  <div class="concept-term">Constitutional Convention Compromises (1787)</div>
+  <div class="concept-def"><strong>Great Compromise:</strong> solved the representation fight between large vs. small states. Created a <em>bicameral legislature</em> — House based on population (favors large states), Senate equal (2 per state, favors small states). <br><strong>Three-Fifths Compromise:</strong> enslaved people counted as 3/5 of a person for apportionment (representation) and taxation — gave Southern states more House seats and Electoral College votes. <br><strong>Commerce/Slave Trade Compromise:</strong> Congress couldn't ban slave trade until 1808. <br><strong>Electoral College:</strong> indirect election of president — a compromise between direct popular vote and congressional election.</div>
+  <span class="concept-why">★ Understand WHAT problem each compromise solved</span>
+</div>
+</div>
+</div>
+
+<div class="section-label">Federalism — The Big One</div>
+
+<div class="card">
+  <div class="card-head" style="color:var(--navy)">Types of Federalism & Power Distribution</div>
+  <table class="vocab-table">
+    <tr><td>Federalism</td><td>The <strong>division of power between a national government and state governments</strong>. Neither level can abolish the other. This was a major innovation — before the U.S., countries typically had either fully centralized or fully decentralized governments. The Constitution lists specific national powers and reserves remaining powers to states (10th Amendment).</td></tr>
+    <tr><td>Enumerated Powers</td><td>Powers <strong>explicitly listed</strong> for Congress in Article I, Section 8. Includes taxing, borrowing money, coining currency, declaring war, regulating interstate/foreign commerce, establishing post offices, raising an army/navy, and creating courts. These are the only powers Congress is expressly given.</td></tr>
+    <tr><td>Implied Powers</td><td>Powers <strong>not explicitly listed</strong> but logically derived from enumerated powers via the Necessary & Proper (Elastic) Clause. Example: Congress can charter a national bank because it has the power to manage currency — even though "bank" isn't mentioned. <em>McCulloch v. Maryland</em> established this broadly.</td></tr>
+    <tr><td>Necessary & Proper Clause</td><td>Article I §8 — Congress can "make all laws <strong>which shall be necessary and proper</strong> for carrying into execution" its enumerated powers. Called the Elastic Clause because it stretches federal power. Anti-Federalists (Brutus No. 1) feared this would make federal power unlimited.</td></tr>
+    <tr><td>Reserved Powers</td><td>The 10th Amendment states powers not given to the federal government are <strong>kept by the states or the people</strong>. These are called "police powers" — the broad authority to regulate health, safety, welfare, and morals. Examples: marriage law, speed limits, education, criminal law.</td></tr>
+    <tr><td>Concurrent Powers</td><td>Powers <strong>shared by both</strong> federal and state governments. Most importantly: taxing, borrowing money, establishing courts, and making/enforcing laws. Both levels of government can tax the same income, for instance.</td></tr>
+    <tr><td>Supremacy Clause</td><td>Article VI — the Constitution and federal laws made under it are <strong>"the supreme Law of the Land."</strong> When federal and state law conflict, federal law wins. This prevents states from nullifying federal laws. <em>McCulloch v. Maryland</em> used this to strike down Maryland's tax on the federal bank.</td></tr>
+    <tr><td>Full Faith & Credit</td><td>Article IV — states must <strong>respect each other's public acts and legal decisions</strong> (court rulings, contracts, licenses). A marriage legal in one state must be recognized in all states.</td></tr>
+    <tr><td>Dual Federalism ("Layer Cake")</td><td>The historical model (pre-New Deal, ~1789–1937) where <strong>federal and state powers were clearly separated</strong> — each had its own distinct domain with little overlap. The national government handled its enumerated powers; states handled everything else. Like two separate cake layers that don't mix.</td></tr>
+    <tr><td>Cooperative Federalism ("Marble Cake")</td><td>The modern model (post-New Deal, 1930s onward) where <strong>federal and state governments work together</strong> to solve problems, with their powers intermingled. Federal grants fund state programs. Example: Medicaid is a federal program administered by states with federal money and federal rules. Like marble cake — the flavors are swirled together.</td></tr>
+    <tr><td>Categorical Grants</td><td>Federal money given to states for <strong>a specific, defined purpose</strong> with <em>conditions and strings attached</em>. States must follow federal rules to receive the money. Example: federal highway money that requires states to maintain a certain speed limit. Gives Congress more control over state policy.</td></tr>
+    <tr><td>Block Grants</td><td>Federal money given to states for <strong>broad policy areas</strong> with <em>fewer strings attached</em>. States have more flexibility in how they spend it. Example: TANF (welfare) money. Favored by conservatives because they give more autonomy to states. States prefer block grants; federal government tends to prefer categorical grants (more control).</td></tr>
+    <tr><td>Unfunded Mandates</td><td>Federal <strong>requirements imposed on states without providing the money</strong> to pay for compliance. Example: The Clean Air Act sets air quality standards states must meet, but Congress doesn't always fund enforcement. States hate these because they impose costs without resources. The Unfunded Mandates Reform Act (1995) tried to limit them.</td></tr>
+    <tr><td>Devolution</td><td>The political effort to <strong>shift power and responsibility from the federal government to states</strong>. Championed by conservatives and Republicans (Reagan's "New Federalism," Clinton's welfare reform). The idea: states are "laboratories of democracy" that can tailor solutions to local needs.</td></tr>
+    <tr><td>Interstate Compacts</td><td>Formal <strong>agreements between two or more states</strong> on a shared issue, requiring congressional approval. Example: the Port Authority of New York and New Jersey, water-sharing agreements, the Multistate Tax Compact.</td></tr>
+  </table>
+</div>
+
+<div class="section-label">Checks & Balances</div>
+<div class="checks-table">
+  <div class="checks-col">
+    <div class="checks-head" style="background:var(--navy);color:#fff;">Congress → Executive</div>
+    <ul>
+      <li>Override presidential veto (2/3 both chambers)</li>
+      <li>Senate confirms appointments (cabinet, judges)</li>
+      <li>Senate ratifies treaties (2/3 vote)</li>
+      <li>Impeach and remove president</li>
+      <li>Controls the budget; can defund programs</li>
+      <li>War Powers Act (60-day troop limit)</li>
+    </ul>
+  </div>
+  <div class="checks-col">
+    <div class="checks-head" style="background:var(--red);color:#fff;">Executive → Congress</div>
+    <ul>
+      <li>Veto legislation (president can reject any bill)</li>
+      <li>Pocket veto (if Congress adjourns)</li>
+      <li>Recommend legislation (SOTU address)</li>
+      <li>Call Congress into special session</li>
+      <li>Executive orders (bypass Congress)</li>
+      <li>Going public / bully pulpit pressure</li>
+    </ul>
+  </div>
+  <div class="checks-col">
+    <div class="checks-head" style="background:var(--green);color:#fff;">Judicial → Both</div>
+    <ul>
+      <li>Judicial review — strike down laws (Marbury)</li>
+      <li>Strike down executive orders as unconstitutional</li>
+      <li>Interpret what laws actually mean</li>
+      <li>Life tenure creates independence from politics</li>
+      <li>Unanimous or majority opinions set precedent</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 2
+════════════════════════════════════════════════════════ -->
+<div id="u2" class="unit-head">
+  <span class="unit-tag tag-red">Unit 2</span>
+  <h2>Interactions Among Branches of Government</h2>
+  <span class="exam-pct">~25–36% of exam — BIGGEST UNIT</span>
+</div>
+
+<div class="section-label">Congress</div>
+<div class="grid-2">
+<div class="card">
+  <div class="card-head" style="color:var(--red)">House of Representatives</div>
+  <table class="vocab-table">
+    <tr><td>Size & Terms</td><td>435 members, 2-year terms. Because ALL members are up for reelection every 2 years, House members are <strong>highly responsive to public opinion</strong> — they're always in campaign mode.</td></tr>
+    <tr><td>Speaker of the House</td><td>Most powerful person in Congress. Controls the legislative agenda, appoints committee chairs, refers bills to committees. Chosen by the majority party.</td></tr>
+    <tr><td>Rules Committee</td><td>The "traffic cop" of the House — sets the rules for floor debate on each bill (how long it can be debated, what amendments are allowed). Called the most powerful committee because it controls what bills actually get voted on.</td></tr>
+    <tr><td>Revenue Bills</td><td>All bills <strong>raising taxes must originate in the House</strong> (Article I, §7). This was designed so the chamber closest to the people (2-year terms) controlled the power to tax.</td></tr>
+    <tr><td>Discharge Petition</td><td>If 218 members (a majority) sign a petition, a bill can be <strong>forced out of committee</strong> and onto the floor for a vote — bypassing the committee chair who is blocking it. Rarely successful.</td></tr>
+  </table>
+</div>
+<div class="card">
+  <div class="card-head" style="color:var(--navy)">Senate</div>
+  <table class="vocab-table">
+    <tr><td>Size & Terms</td><td>100 members (2 per state), 6-year staggered terms. Only 1/3 up for election every 2 years — makes the Senate more <strong>stable and insulated</strong> from short-term political swings. Represents states equally.</td></tr>
+    <tr><td>Filibuster</td><td>A Senate tactic where a senator (or minority party) <strong>refuses to stop talking</strong>, preventing a vote from happening. Can last for days. Used to block legislation the minority strongly opposes. The threat alone can kill a bill.</td></tr>
+    <tr><td>Cloture</td><td>The Senate vote to <strong>end a filibuster</strong>. Requires 60 votes (a "supermajority"). If the majority party has fewer than 60 seats, it needs bipartisan support to pass anything significant — this is why 60 is the magic number in the Senate.</td></tr>
+    <tr><td>Advice & Consent</td><td>Senate's constitutional role to <strong>confirm or reject</strong> presidential nominations (cabinet, federal judges, Supreme Court justices) and ratify treaties. Treaties need 2/3 Senate approval. Major check on executive power.</td></tr>
+    <tr><td>Unanimous Consent</td><td>Senate agreements where <strong>all 100 senators agree</strong> to speed up procedures (skip certain votes, limit debate time). Because any one senator can object, this requires cooperation.</td></tr>
+  </table>
+</div>
+</div>
+
+<div class="card" style="margin-top:1rem">
+  <div class="card-head" style="color:var(--navy)">Legislative Vocabulary (Full Explanations)</div>
+  <table class="vocab-table">
+    <tr><td>Bicameralism</td><td>Having <strong>two separate legislative chambers</strong> — the House and Senate — each with different structures, powers, and constituencies. A bill must pass both chambers in identical form before going to the president. Designed to slow legislation and require broader consensus.</td></tr>
+    <tr><td>Standing Committee</td><td>A <strong>permanent committee</strong> in Congress with jurisdiction over a specific policy area (Foreign Relations, Armed Services, Judiciary, Appropriations, etc.). Bills are assigned to the relevant committee, where they are debated, amended, or killed. Most legislation dies in committee — never reaching the floor.</td></tr>
+    <tr><td>Conference Committee</td><td>A <strong>temporary joint committee</strong> of House and Senate members formed to resolve differences when the two chambers pass different versions of the same bill. They produce a compromise version that both chambers must vote on again.</td></tr>
+    <tr><td>Markup</td><td>The committee process of <strong>reviewing and amending a bill</strong> line-by-line before voting to send it to the floor. This is where the real legislative work happens — the public floor debate is often performative.</td></tr>
+    <tr><td>Gerrymandering</td><td>Drawing congressional district boundaries to give one party a <strong>political advantage</strong>. "Packing" concentrates opposition voters into a few districts (so they win big but win few seats). "Cracking" splits opposition voters across many districts (so they never have a majority anywhere). Named after Governor Elbridge Gerry, whose 1812 district looked like a salamander.</td></tr>
+    <tr><td>Incumbency Advantage</td><td>The significant political edge that <strong>sitting members of Congress have over challengers</strong>. They have name recognition, can use their franking privilege (free mail), have staff to help constituents, have raised money before, can claim credit for federal projects in the district, and have access to media. House incumbents win reelection ~90% of the time.</td></tr>
+    <tr><td>Pork Barrel / Earmarks</td><td>Federal spending directed to <strong>a specific member's district</strong> to benefit constituents and make the member look good. Also called "earmarks." Example: a federal grant for a new highway in a swing district. Criticized as wasteful; defended as democratic (representatives serving their people).</td></tr>
+    <tr><td>Logrolling</td><td>Trading votes between legislators — <strong>"I'll vote for your bill if you vote for mine."</strong> Allows each member to get something for their district by supporting others' priorities. Common in budget and appropriations bills.</td></tr>
+    <tr><td>Oversight</td><td>Congress's <strong>power to monitor and investigate the executive branch</strong> to ensure laws are faithfully executed and agencies are functioning properly. Conducted through committee hearings, subpoenas, audits, and the Government Accountability Office (GAO). Example: Senate hearings on executive agencies or investigations like Watergate.</td></tr>
+    <tr><td>Impeachment</td><td>The constitutional process to <strong>remove federal officials</strong>. The House votes to impeach by simple majority (charges = "articles of impeachment"). The Senate holds the trial and needs a 2/3 vote to convict and remove. The Chief Justice presides in presidential impeachment trials. Presidents Andrew Johnson, Bill Clinton, and Donald Trump (twice) were impeached; none were convicted by the Senate.</td></tr>
+    <tr><td>Mandatory Spending</td><td>Spending <strong>required by existing law</strong> that Congress does not vote on annually — it happens automatically. Includes Social Security, Medicare, Medicaid, and interest on the national debt. Makes up ~65% of the federal budget and grows automatically as the programs grow.</td></tr>
+    <tr><td>Discretionary Spending</td><td>Spending that <strong>Congress must actively appropriate</strong> each year through the budget process. Includes defense, education, transportation, and most agency budgets. About 30% of the federal budget. This is where Congress debates "how much to spend."</td></tr>
+    <tr><td>Franking Privilege</td><td>Members of Congress can <strong>mail official communications to constituents for free</strong>. Helps incumbents stay in touch with voters and reinforces the incumbency advantage — challengers must pay postage.</td></tr>
+  </table>
+</div>
+
+<div class="section-label">The Executive Branch</div>
+<div class="grid-2">
+<div class="card">
+  <div class="card-head" style="color:var(--red)">Formal (Constitutional) Presidential Powers</div>
+  <table class="vocab-table">
+    <tr><td>Veto</td><td>President can <strong>reject a bill</strong> passed by Congress. Congress can override with 2/3 vote in both chambers. Presidents use the veto threat as leverage to influence legislation before it passes.</td></tr>
+    <tr><td>Pocket Veto</td><td>If Congress adjourns within 10 days of sending a bill to the president, and he doesn't sign it, the bill <strong>dies automatically</strong> — Congress is not available to override. Cannot be overridden.</td></tr>
+    <tr><td>Commander-in-Chief</td><td>President is the <strong>top military commander</strong>. Can deploy forces, but the War Powers Act (1973) requires notification of Congress within 48 hours and withdrawal within 60 days unless Congress authorizes the conflict.</td></tr>
+    <tr><td>Treaty Power</td><td>President <strong>negotiates treaties</strong> with foreign governments, but they must be ratified by 2/3 of the Senate. Because this is a high bar, presidents often use executive agreements instead.</td></tr>
+    <tr><td>Appointment Power</td><td>President nominates <strong>cabinet members, federal judges, Supreme Court justices, ambassadors, and agency heads</strong>. All require Senate confirmation (majority vote). Recess appointments can bypass Senate confirmation temporarily.</td></tr>
+    <tr><td>Pardon Power</td><td>President can <strong>pardon individuals</strong> for federal crimes. Absolute for federal offenses; cannot be overridden. Cannot pardon for state crimes or impeachments. Has been controversial (Ford's pardon of Nixon).</td></tr>
+  </table>
+</div>
+<div class="card">
+  <div class="card-head" style="color:var(--purple)">Informal (Extra-Constitutional) Presidential Powers</div>
+  <table class="vocab-table">
+    <tr><td>Executive Orders</td><td>Presidential <strong>directives to the executive branch</strong> that have the force of law without needing a congressional vote. Examples: Truman's desegregation of the military, Obama's DACA, Trump's travel ban. Can be overturned by courts, revoked by successor presidents, or defunded by Congress. Important: they only apply within the executive branch.</td></tr>
+    <tr><td>Executive Agreements</td><td>International agreements with foreign leaders made <strong>without Senate ratification</strong>. Functionally like treaties but don't require the 2/3 Senate vote. Can be revoked by the next president. Used increasingly more than formal treaties.</td></tr>
+    <tr><td>Executive Privilege</td><td>The claimed right of the president to <strong>keep White House communications confidential</strong> from Congress and courts. Not in the Constitution — recognized by SCOTUS in <em>U.S. v. Nixon</em> (1974) but held to be limited (Nixon had to hand over tapes). Rooted in separation of powers and need for candid executive advice.</td></tr>
+    <tr><td>Signing Statements</td><td>Written documents issued when a president signs a bill into law, stating <strong>how the president interprets the law</strong> or which provisions he considers unconstitutional and won't enforce. Criticized as allowing presidents to effectively veto parts of a law without a formal veto.</td></tr>
+    <tr><td>Bully Pulpit</td><td>The president's <strong>unique platform to influence public opinion</strong> — speeches, press conferences, social media, State of the Union. Presidents "go public" to build pressure on Congress by rallying citizens. Term coined by Teddy Roosevelt.</td></tr>
+    <tr><td>War Powers Act (1973)</td><td>Congress's attempt to <strong>reassert control over military deployment</strong>. Requires president to notify Congress within 48 hours of deploying troops and withdraw them within 60 days (plus 30-day withdrawal) unless Congress authorizes continued operations. Most presidents have argued it's unconstitutional, and it has rarely been enforced.</td></tr>
+  </table>
+</div>
+</div>
+
+<div class="card" style="margin-top:1rem">
+  <div class="card-head" style="color:var(--green)">Bureaucracy</div>
+  <table class="vocab-table">
+    <tr><td>Federal Bureaucracy</td><td>The <strong>massive set of agencies, departments, and offices</strong> in the executive branch that implement and administer federal law. Over 2 million civilian employees. Includes cabinet departments (State, Defense, Treasury, etc.), independent agencies (EPA, FDA, FEC), and government corporations (USPS, Amtrak).</td></tr>
+    <tr><td>Bureaucratic Discretion</td><td>The <strong>authority agencies have to fill in the details</strong> Congress leaves undefined when writing laws. Congress often writes laws in general terms ("protect the environment"), and agencies decide what that means in practice through regulations. This is where much of the real policymaking happens.</td></tr>
+    <tr><td>Rule-Making</td><td>The bureaucratic process of <strong>creating regulations</strong> — essentially writing specific rules to implement a law. Published in the Federal Register; open to public comment. Regulations have the force of law.</td></tr>
+    <tr><td>Merit System / Civil Service</td><td>Federal employees are <strong>hired based on qualifications and competitive exams</strong>, not political connections. The Pendleton Civil Service Reform Act (1883) created this after the spoils system (patronage) led to corruption and the assassination of President Garfield.</td></tr>
+    <tr><td>Iron Triangle</td><td>A <strong>stable, mutually beneficial relationship between three actors</strong>: a congressional committee, a federal agency, and an interest group in the same policy area. Example: the Armed Services Committee + Pentagon + defense contractors. Each benefits the others: Congress funds the agency and the contractors support the committee members' reelection; the agency implements policies that benefit contractors; contractors lobby Congress to support the agency. Very hard to disrupt.</td></tr>
+    <tr><td>Issue Network</td><td>A <strong>broader, more fluid web of policy actors</strong> — including think tanks, academics, media, and advocacy groups — who all care about a policy area but don't have the stable, closed relationships of an iron triangle. Modern policymaking is often characterized by these looser networks.</td></tr>
+    <tr><td>Principal-Agent Problem</td><td>The challenge that Congress (the "principal") faces in controlling the bureaucracy (the "agent"). Once an agency is created, it develops its own goals, expertise, and relationships — making it hard for Congress to control what it actually does. Agencies may prioritize their own survival over congressional intent.</td></tr>
+  </table>
+</div>
+
+<div class="section-label">The Judicial Branch</div>
+<div class="card">
+  <table class="vocab-table">
+    <tr><td>Judicial Review</td><td>The power of federal courts to <strong>review laws and executive actions and strike down those that violate the Constitution</strong>. Not explicitly in the Constitution — established by Chief Justice John Marshall in <em>Marbury v. Madison</em> (1803). This makes the Supreme Court the final arbiter of what the Constitution means. It's why SCOTUS is powerful despite having no army or budget.</td></tr>
+    <tr><td>Original Jurisdiction</td><td>The authority to <strong>hear a case for the first time</strong> (not on appeal). The Supreme Court has original jurisdiction in cases involving disputes between states and cases involving foreign ambassadors. Most cases reach SCOTUS through appellate jurisdiction.</td></tr>
+    <tr><td>Appellate Jurisdiction</td><td>The authority to <strong>review decisions made by lower courts</strong>. This is how ~99% of Supreme Court cases arrive. Parties who lose in lower courts petition SCOTUS to review the decision.</td></tr>
+    <tr><td>Certiorari ("Rule of Four")</td><td>Certiorari ("cert") is the formal request for SCOTUS to hear a case. At least <strong>four of the nine justices</strong> must agree to grant cert. SCOTUS receives ~7,000–8,000 petitions per year and hears about 60–80 cases. By deciding not to hear a case, SCOTUS lets the lower court ruling stand.</td></tr>
+    <tr><td>Stare Decisis</td><td>Latin for "let the decision stand." The principle that <strong>courts should follow prior rulings (precedents)</strong> when facing similar cases. Provides stability and predictability. When SCOTUS overrules a precedent (like overturning <em>Roe v. Wade</em> in 2022), it's a major legal event.</td></tr>
+    <tr><td>Judicial Activism</td><td>A philosophy where judges <strong>use their power broadly to advance rights or correct injustices</strong>, even if it means departing from precedent or the text's literal meaning. Examples: <em>Brown v. Board</em>, <em>Obergefell v. Hodges</em>. Often associated (though not exclusively) with liberal courts.</td></tr>
+    <tr><td>Judicial Restraint</td><td>A philosophy where judges <strong>defer to the elected branches</strong> and only strike down laws when there's a clear constitutional violation. Judges should follow the text's original meaning and avoid "legislating from the bench." Associated with conservative/originalist justices.</td></tr>
+    <tr><td>Amicus Curiae</td><td>Latin for "friend of the court." <strong>Third-party briefs submitted by interest groups, governments, or experts</strong> who have a stake in the case's outcome but aren't a party to it. Example: the ACLU submitting a brief in a civil liberties case. Shows how interest groups use the courts as a political strategy.</td></tr>
+    <tr><td>Opinion Types</td><td><strong>Majority opinion:</strong> binding precedent; the official ruling of the Court. <strong>Concurring opinion:</strong> agrees with the majority ruling but for different reasons. <strong>Dissenting opinion:</strong> disagrees with the majority — sometimes later become the basis for overturning old precedents.</td></tr>
+    <tr><td>Senatorial Courtesy</td><td>The tradition that <strong>the president will consult with senators from the nominee's home state</strong> before appointing federal district judges. Senators from the president's party effectively have veto power over nominations in their state.</td></tr>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 3
+════════════════════════════════════════════════════════ -->
+<div id="u3" class="unit-head">
+  <span class="unit-tag tag-green">Unit 3</span>
+  <h2>Civil Liberties &amp; Civil Rights</h2>
+  <span class="exam-pct">~13–18% of exam</span>
+</div>
+
+<div class="grid-2" style="margin-bottom:1rem;">
+  <div style="background:#edf7f2;border:2px solid var(--green);border-radius:8px;padding:1.1rem 1.3rem;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;">Civil Liberties</div>
+    <div style="font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;">Protections FROM the government</div>
+    <div style="font-size:13.5px;color:var(--muted);">Things the government <strong>cannot do to you</strong>. Based on the Bill of Rights. Example: the government can't search your house without a warrant or stop you from speaking your mind.</div>
+  </div>
+  <div style="background:#fdf0f2;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.3rem;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;">Civil Rights</div>
+    <div style="font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;">The right to equal treatment</div>
+    <div style="font-size:13.5px;color:var(--muted);">The government must <strong>treat everyone equally</strong>. Based on the 14th Amendment. Example: the government cannot discriminate against you based on race or sex.</div>
+  </div>
+</div>
+
+<div class="section-label">Key Terms — Civil Liberties</div>
+<div class="card">
+  <table class="vocab-table">
+    <tr><td>Incorporation Doctrine</td><td>Originally the Bill of Rights only limited the <em>federal</em> government. The 14th Amendment changed that — courts used it to make the Bill of Rights apply to <strong>state governments too</strong>. Each right was applied state-by-state through court cases. Today almost every right in the Bill of Rights applies to all 50 states.</td></tr>
+    <tr><td>Establishment Clause</td><td>From the 1st Amendment. The government <strong>cannot create an official religion, prefer one religion over another, or favor religion over no religion</strong>. That's why public schools can't lead prayers (Engel v. Vitale). Think of it as a wall between church and state.</td></tr>
+    <tr><td>Free Exercise Clause</td><td>Also from the 1st Amendment. The government <strong>cannot stop you from practicing your religion</strong>. Your beliefs are always protected — but actions tied to religion can sometimes be regulated. Example: Amish kids were allowed to stop school after 8th grade (Wisconsin v. Yoder) because their faith required it.</td></tr>
+    <tr><td>Prior Restraint</td><td>When the government tries to <strong>block something from being published before it comes out</strong>. This is almost always unconstitutional. The government can punish you after you publish something harmful, but it generally can't stop you beforehand. Example: Nixon couldn't stop newspapers from printing the Pentagon Papers.</td></tr>
+    <tr><td>Symbolic Speech</td><td>Actions that send a message — <strong>protected as free speech</strong> even though no words are spoken. Examples: wearing armbands to protest a war (Tinker v. Des Moines), burning a flag. The government can't ban it just because people find it offensive.</td></tr>
+    <tr><td>Clear &amp; Present Danger → Imminent Lawless Action</td><td>Two standards for when speech loses protection. The old test (Schenck, 1919): speech creating a "clear and present danger" could be restricted. The <strong>current stricter test (Brandenburg, 1969): only speech that directly incites imminent lawless action</strong> can be restricted. This means almost all speech — even hateful or extreme speech — is protected unless it's about to cause immediate violence.</td></tr>
+    <tr><td>Exclusionary Rule</td><td>If police find evidence by <strong>violating your 4th Amendment rights</strong> (illegal search, no warrant), that evidence <strong>cannot be used against you in court</strong>. It gets "excluded." Why? To discourage police from breaking the rules. Case: Mapp v. Ohio (1961).</td></tr>
+    <tr><td>Miranda Rights</td><td>Before police question someone in custody, they must <strong>read them their rights</strong>: you have the right to remain silent, anything you say can be used against you, you have the right to a lawyer. If they don't do this, statements made during questioning can be thrown out. Based on Miranda v. Arizona (1966).</td></tr>
+    <tr><td>Right to Privacy</td><td>Not written anywhere in the Constitution, but courts have found it <strong>implied by several amendments</strong> (1st, 3rd, 4th, 9th). Protects personal decisions from government interference — like a married couple's right to use contraception (Griswold v. Connecticut, 1965). Was the basis for abortion rights in Roe v. Wade, which was overturned in 2022 (Dobbs).</td></tr>
+    <tr><td>Due Process (Procedural)</td><td>The government must <strong>follow fair procedures</strong> before taking away your life, l... (78 KB left)
