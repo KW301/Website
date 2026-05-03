@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Biology — Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f0d;
+    --surface: #111a14;
+    --surface2: #162019;
+    --border: #1e3024;
+    --accent: #4ade80;
+    --accent2: #22d3ee;
+    --accent3: #f59e0b;
+    --accent4: #f472b6;
+    --accent5: #a78bfa;
+    --accent6: #fb923c;
+    --accent7: #34d399;
+    --accent8: #60a5fa;
+    --text: #e8f5ec;
+    --text-muted: #6b9b78;
+    --text-dim: #3d6b4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── BACKGROUND TEXTURE ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(74,222,128,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(34,211,238,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    position: relative;
+    text-align: center;
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(74,222,128,0.04) 39px,
+      rgba(74,222,128,0.04) 40px
+    );
+  }
+
+  .header-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 7vw, 80px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #e8f5ec 30%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,15,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  nav a {
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 14px 16px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--text); border-bottom-color: var(--accent); }
+
+  /* ─── MAIN ─── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── UNIT SECTION ─── */
+  .unit {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .unit:nth-child(1) { animation-delay: 0.05s; }
+  .unit:nth-child(2) { animation-delay: 0.10s; }
+  .unit:nth-child(3) { animation-delay: 0.15s; }
+  .unit:nth-child(4) { animation-delay: 0.20s; }
+  .unit:nth-child(5) { animation-delay: 0.25s; }
+  .unit:nth-child(6) { animation-delay: 0.30s; }
+  .unit:nth-child(7) { animation-delay: 0.35s; }
+  .unit:nth-child(8) { animation-delay: 0.40s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .unit-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .unit-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--unit-color);
+    opacity: 0.25;
+    min-width: 80px;
+    text-align: right;
+    margin-top: -8px;
+  }
+
+  .unit-title-block {}
+
+  .unit-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--unit-color);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .unit-weight {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  /* ─── GRID ─── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    border-color: var(--unit-color);
+    transform: translateY(-2px);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--unit-color);
+    opacity: 0.5;
+  }
+
+  .card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--unit-color);
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #b0cbb8;
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  ul.bullet {
+    list-style: none;
+    padding: 0;
+  }
+  ul.bullet li {
+    font-size: 14px;
+    color: #b0cbb8;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    line-height: 1.55;
+  }
+  ul.bullet li::before {
+    content: '›';
+    position: absolute;
+    left: 4px;
+    color: var(--unit-color);
+    font-weight: 700;
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ─── TERM GRID ─── */
+  .term-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .term {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--unit-color);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+  }
+  .term-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--unit-color);
+    margin-bottom: 3px;
+  }
+  .term-def {
+    font-size: 12px;
+    color: #8aac92;
+    line-height: 1.4;
+  }
+
+  /* ─── FORMULA BOX ─── */
+  .formula-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 8px 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── WIDE CARD ─── */
+  .card-wide {
+    grid-column: 1 / -1;
+  }
+
+  /* ─── DIVIDER ─── */
+  .section-divider {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 28px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── EXAM TIP ─── */
+  .exam-tip {
+    background: rgba(245,158,11,0.07);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #c9a84c;
+    grid-column: 1 / -1;
+  }
+  .exam-tip::before {
+    content: '★ EXAM TIP  ';
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--accent3);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ─── UNIT COLOR OVERRIDES ─── */
+  .u1 { --unit-color: #4ade80; }
+  .u2 { --unit-color: #22d3ee; }
+  .u3 { --unit-color: #f59e0b; }
+  .u4 { --unit-color: #f472b6; }
+  .u5 { --unit-color: #a78bfa; }
+  .u6 { --unit-color: #fb923c; }
+  .u7 { --unit-color: #34d399; }
+  .u8 { --unit-color: #60a5fa; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-tag">AP Biology · Units 1–8 · Complete Study Guide</div>
+  <h1>AP Biology</h1>
+  <p class="subtitle">Comprehensive review of all key concepts, vocabulary, and exam essentials</p>
+</header>
+
+<nav>
+  <a href="#u1">01 · Chemistry</a>
+  <a href="#u2">02 · Cell Structure</a>
+  <a href="#u3">03 · Energetics</a>
+  <a href="#u4">04 · Cell Comm.</a>
+  <a href="#u5">05 · Heredity</a>
+  <a href="#u6">06 · Gene Expr.</a>
+  <a href="#u7">07 · Evolution</a>
+  <a href="#u8">08 · Ecology</a>
+</nav>
+
+<main>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 1: CHEMISTRY OF LIFE
+════════════════════════════════════════════════ -->
+<section class="unit u1" id="u1">
+  <div class="unit-header">
+    <div class="unit-number">01</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 1</div>
+      <h2>Chemistry of Life</h2>
+    </div>
+    <div class="unit-weight">~8–11% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Water Properties</div>
+      <ul class="bullet">
+        <li><strong>Cohesion</strong> — H-bonds hold water molecules together (surface tension)</li>
+        <li><strong>Adhesion</strong> — water attracted to other polar surfaces (capillarity)</li>
+        <li><strong>High specific heat</strong> — resists temperature changes; stabilizes climate</li>
+        <li><strong>High heat of vaporization</strong> — evaporation cools surfaces</li>
+        <li><strong>Polar solvent</strong> — dissolves ionic and polar compounds</li>
+        <li><strong>Less dense as solid</strong> — ice floats; insulates aquatic ecosystems</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Macromolecules Overview</div>
+      <ul class="bullet">
+        <li><strong>Carbohydrates</strong> — C, H, O (1:2:1 ratio); energy, structure</li>
+        <li><strong>Lipids</strong> — C, H, O; long-term energy, membranes, hormones</li>
+        <li><strong>Proteins</strong> — C, H, O, N, S; enzymes, structure, signaling</li>
+        <li><strong>Nucleic Acids</strong> — C, H, O, N, P; information storage (DNA/RNA)</li>
+        <li>All built by <strong>dehydration synthesis</strong>; broken by <strong>hydrolysis</strong></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Carbohydrates</div>
+      <ul class="bullet">
+        <li>Monomers = <strong>monosaccharides</strong> (glucose, fructose, galactose)</li>
+        <li>Disaccharides joined by <strong>glycosidic linkages</strong></li>
+        <li><strong>Starch</strong> — α-glucose; energy storage in plants</li>
+        <li><strong>Glycogen</strong> — α-glucose; energy storage in animals (liver/muscle)</li>
+        <li><strong>Cellulose</strong> — β-glucose; structural (plant cell walls); indigestible</li>
+        <li><strong>Chitin</strong> — β-glucose + N-acetyl; fungal walls, arthropod exoskeleton</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Lipids</div>
+      <ul class="bullet">
+        <li><strong>Triglycerides</strong>: 1 glycerol + 3 fatty acids (ester bonds)</li>
+        <li><strong>Saturated FA</strong> — no double bonds; solid at room temp (animal fats)</li>
+        <li><strong>Unsaturated FA</strong> — double bonds; liquid at room temp (plant oils)</li>
+        <li><strong>Phospholipids</strong> — amphipathic; form bilayers; membrane structure</li>
+        <li><strong>Steroids</strong> — 4 carbon rings; cholesterol, hormones (testosterone, estrogen)</li>
+        <li><strong>Waxes</strong> — long-chain FA + alcohol; waterproofing</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Proteins</div>
+      <ul class="bullet">
+        <li>Monomers = <strong>amino acids</strong> (20 types); linked by <strong>peptide bonds</strong></li>
+        <li><strong>1° structure</strong> — AA sequence (encoded by DNA)</li>
+        <li><strong>2° structure</strong> — α-helix or β-pleated sheet (H-bonds along backbone)</li>
+        <li><strong>3° structure</strong> — overall 3D shape (R-group interactions)</li>
+        <li><strong>4° structure</strong> — multiple polypeptide subunits (e.g., hemoglobin)</li>
+        <li>Denatured by heat, pH change, heavy metals</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Enzymes</div>
+      <ul class="bullet">
+        <li>Biological <strong>catalysts</strong> — lower activation energy; unchanged after reaction</li>
+        <li>Substrate binds at <strong>active site</strong> (induced fit model)</li>
+        <li><strong>Cofactors</strong> (inorganic) & <strong>coenzymes</strong> (organic vitamins) assist</li>
+        <li><strong>Competitive inhibition</strong> — inhibitor mimics substrate; blockable with more substrate</li>
+        <li><strong>Noncompetitive inhibition</strong> — inhibitor changes shape of active site (allosteric site)</li>
+        <li><strong>Feedback inhibition</strong> — end product inhibits enzyme earlier in pathway</li>
+      </ul>
+    </div>
+
+    <div class="card card-wide">
+      <div class="card-title">Nucleic Acids</div>
+      <div class="grid" style="grid-template-columns:1fr 1fr; margin:0;">
+        <div>
+          <p><strong>DNA</strong> — double helix; deoxyribose sugar; bases A, T, G, C; stores genetic info</p>
+          <p><strong>RNA</strong> — single strand; ribose sugar; bases A, U, G, C; translates and carries genetic info</p>
+          <p>Nucleotide = 5-carbon sugar + phosphate group + nitrogenous base</p>
+        </div>
+        <div>
+          <p><strong>Base pairing rules:</strong> A–T (2 H-bonds), G–C (3 H-bonds) in DNA; A–U in RNA</p>
+          <p><strong>Purines</strong>: A, G (double ring) &nbsp;|&nbsp; <strong>Pyrimidines</strong>: T, C, U (single ring)</p>
+          <p>ATP = energy currency; ADP + Pᵢ ⇌ ATP</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exam-tip">
+      On the FRQ, always connect structure to function: e.g., explain WHY cellulose is structural (β-linkage creates straight, hydrogen-bondable fibers) vs. WHY starch is digestible (α-linkage is recognized by amylase).
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 2: CELL STRUCTURE AND FUNCTION
+════════════════════════════════════════════════ -->
+<section class="unit u2" id="u2">
+  <div class="unit-header">
+    <div class="unit-number">02</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 2</div>
+      <h2>Cell Structure &amp; Function</h2>
+    </div>
+    <div class="unit-weight">~10–13% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Prokaryotes vs. Eukaryotes</div>
+      <ul class="bullet">
+        <li><strong>Prokaryotes</strong>: no membrane-bound nucleus; circular DNA; ribosomes (70S); bacteria & archaea</li>
+        <li><strong>Eukaryotes</strong>: membrane-bound nucleus; linear DNA; ribosomes (80S); animals, plants, fungi, protists</li>
+        <li>Both have: plasma membrane, ribosomes, DNA, cytoplasm</li>
+        <li><strong>Endosymbiotic theory</strong>: mitochondria & chloroplasts were once free-living prokaryotes (own DNA, double membrane, 70S ribosomes)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Key Organelles</div>
+      <ul class="bullet">
+        <li><strong>Nucleus</strong> — contains DNA; site of transcription; nuclear pores control traffic</li>
+        <li><strong>Rough ER</strong> — ribosomes on surface; protein synthesis &amp; modification</li>
+        <li><strong>Smooth ER</strong> — lipid synthesis; detoxification; Ca²⁺ storage</li>
+        <li><strong>Golgi</strong> — sorts, modifies, packages proteins; "post office"</li>
+        <li><strong>Mitochondria</strong> — cellular respiration; ATP production; cristae increase SA</li>
+        <li><strong>Lysosomes</strong> — hydrolytic enzymes; digestion; autophagy</li>
+        <li><strong>Vacuoles</strong> — storage; central vacuole maintains turgor pressure (plants)</li>
+        <li><strong>Chloroplasts</strong> — photosynthesis (plants/algae); thylakoids + stroma</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Plasma Membrane</div>
+      <ul class="bullet">
+        <li><strong>Fluid mosaic model</strong> — phospholipid bilayer with embedded proteins</li>
+        <li>Hydrophilic heads face outward; hydrophobic tails face inward</li>
+        <li><strong>Cholesterol</strong> — stabilizes fluidity (buffers against temp extremes)</li>
+        <li><strong>Integral proteins</strong> — span the membrane (channels, transporters)</li>
+        <li><strong>Peripheral proteins</strong> — on surface (signaling, support)</li>
+        <li><strong>Glycoproteins/glycolipids</strong> — cell recognition (immune response)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Membrane Transport</div>
+      <ul class="bullet">
+        <li><strong>Simple diffusion</strong> — small nonpolar molecules (O₂, CO₂) move with gradient; no energy</li>
+        <li><strong>Facilitated diffusion</strong> — channel or carrier proteins; with gradient; no ATP</li>
+        <li><strong>Osmosis</strong> — water moves toward higher solute concentration (semi-perm membrane)</li>
+        <li><strong>Active transport</strong> — against gradient; requires ATP (Na⁺/K⁺ pump)</li>
+        <li><strong>Endocytosis</strong> — phagocytosis (large), pinocytosis (fluids), receptor-mediated</li>
+        <li><strong>Exocytosis</strong> — vesicle fuses with membrane; secretion</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Tonicity &amp; Osmosis</div>
+      <ul class="bullet">
+        <li><strong>Hypertonic</strong> — more solute outside cell → cell shrinks (crenation in animals; plasmolysis in plants)</li>
+        <li><strong>Hypotonic</strong> — less solute outside → cell swells; animal cells may lyse; plant cells become turgid (normal/healthy)</li>
+        <li><strong>Isotonic</strong> — equal solute concentration; no net movement</li>
+        <li>Plant cells use <strong>turgor pressure</strong> for structural support</li>
+        <li>Water potential ψ = ψₛ + ψₚ (solute + pressure potential)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cell Size &amp; Surface Area</div>
+      <ul class="bullet">
+        <li>As cell volume ↑, SA:V ratio ↓ — limits efficient exchange</li>
+        <li>Smaller cells = higher SA:V ratio = more efficient transport</li>
+        <li>Adaptations to increase SA: microvilli (intestinal cells), cristae (mitochondria), thylakoid membranes</li>
+        <li>Cell specialization allows complex multicellular organisms</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      Water potential questions are common FRQs. Remember: water moves from high ψ to low ψ (i.e., from low solute to high solute). Adding solute lowers ψₛ, which lowers ψ overall.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 3: CELLULAR ENERGETICS
+════════════════════════════════════════════════ -->
+<section class="unit u3" id="u3">
+  <div class="unit-header">
+    <div class="unit-number">03</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 3</div>
+      <h2>Cellular Energetics</h2>
+    </div>
+    <div class="unit-weight">~12–16% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Thermodynamics</div>
+      <ul class="bullet">
+        <li><strong>1st Law</strong> — energy cannot be created or destroyed, only converted</li>
+        <li><strong>2nd Law</strong> — every energy transfer increases entropy (disorder)</li>
+        <li><strong>Exergonic rxn</strong> — releases free energy (ΔG < 0); spontaneous (e.g., cellular respiration)</li>
+        <li><strong>Endergonic rxn</strong> — requires free energy (ΔG > 0); not spontaneous (e.g., photosynthesis)</li>
+        <li><strong>ATP coupling</strong> — exergonic hydrolysis of ATP drives endergonic reactions</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Photosynthesis Overview</div>
+      <div class="formula-box">6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂</div>
+      <ul class="bullet">
+        <li><strong>Light-dependent reactions</strong> — thylakoid membranes; produce ATP, NADPH, O₂</li>
+        <li><strong>Calvin Cycle (light-independent)</strong> — stroma; uses ATP &amp; NADPH to fix CO₂ into G3P → glucose</li>
+        <li>Photosystems <strong>PSII</strong> (P680) and <strong>PSI</strong> (P700) absorb light</li>
+        <li><strong>Water splitting</strong> (photolysis) at PSII releases O₂ and electrons</li>
+        <li>Electron transport chain pumps H⁺ → ATP synthase → ATP (chemiosmosis)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Calvin Cycle (C3 plants)</div>
+      <ul class="bullet">
+        <li><strong>Carbon fixation</strong> — RuBisCO fixes CO₂ to RuBP (5C) → 2× 3-PGA (3C)</li>
+        <li><strong>Reduction</strong> — 3-PGA → G3P (uses ATP &amp; NADPH)</li>
+        <li><strong>Regeneration of RuBP</strong> — G3P → RuBP (uses ATP)</li>
+        <li>3 CO₂ fixed per turn; 6 turns to produce 1 net G3P for export</li>
+        <li>Net: 3 CO₂ + 9 ATP + 6 NADPH → 1 G3P</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cellular Respiration</div>
+      <div class="formula-box">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ~30–32 ATP</div>
+      <ul class="bullet">
+        <li><strong>Glycolysis</strong> — cytoplasm; glucose (6C) → 2 pyruvate (3C); net 2 ATP, 2 NADH</li>
+        <li><strong>Pyruvate oxidation</strong> — mitochondrial matrix; pyruvate → acetyl-CoA + CO₂; 2 NADH</li>
+        <li><strong>Krebs Cycle</strong> — matrix; 2 acetyl-CoA → 4 CO₂; 6 NADH, 2 FADH₂, 2 ATP</li>
+        <li><strong>Oxidative phosphorylation</strong> — inner membrane; ETC + chemiosmosis → ~26–28 ATP</li>
+        <li>NADH and FADH₂ carry electrons to ETC; O₂ is final electron acceptor</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fermentation</div>
+      <ul class="bullet">
+        <li>Occurs when O₂ is absent (anaerobic); regenerates NAD⁺ to keep glycolysis running</li>
+        <li><strong>Lactic acid fermentation</strong> — pyruvate + NADH → lactate + NAD⁺ (muscle cells, bacteria)</li>
+        <li><strong>Alcohol fermentation</strong> — pyruvate → CO₂ + ethanol + NAD⁺ (yeast)</li>
+        <li>Net yield = only 2 ATP (from glycolysis alone)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">C4 &amp; CAM Plants</div>
+      <ul class="bullet">
+        <li><strong>Photorespiration</strong> — RuBisCO binds O₂ instead of CO₂ when CO₂ is low; wasteful</li>
+        <li><strong>C4 plants</strong> (corn, sugarcane) — pre-fix CO₂ as malate in mesophyll cells; transfer to bundle sheath for Calvin cycle; reduces photorespiration</li>
+        <li><strong>CAM plants</strong> (cacti, succulents) — open stomata at night to fix CO₂ as malate; close stomata during day; adaptation to arid environments</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      Know where each stage of respiration occurs and what each produces. The AP exam frequently asks you to compare aerobic vs. anaerobic ATP yield and to explain chemiosmosis (proton gradient → ATP synthase).
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 4: CELL COMMUNICATION & CELL CYCLE
+════════════════════════════════════════════════ -->
+<section class="unit u4" id="u4">
+  <div class="unit-header">
+    <div class="unit-number">04</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 4</div>
+      <h2>Cell Communication &amp; Cell Cycle</h2>
+    </div>
+    <div class="unit-weight">~10–15% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Types of Cell Signaling</div>
+      <ul class="bullet">
+        <li><strong>Direct</strong> — gap junctions (animals) / plasmodesmata (plants); direct cytoplasm contact</li>
+        <li><strong>Paracrine</strong> — local; signal diffuses to nearby cells (growth factors)</li>
+        <li><strong>Endocrine</strong> — hormones travel via bloodstream to distant target cells</li>
+        <li><strong>Autocrine</strong> — cell signals itself</li>
+        <li><strong>Synaptic</strong> — neurotransmitters across synapse</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Signal Transduction Pathway</div>
+      <ul class="bullet">
+        <li><strong>Reception</strong> — ligand binds specific receptor (complementary shape)</li>
+        <li><strong>Transduction</strong> — signal converted &amp; amplified via relay molecules (cascade)</li>
+        <li><strong>Response</strong> — gene expression change, enzyme activation, or other cellular response</li>
+        <li><strong>G protein-coupled receptors (GPCR)</strong> — activate G protein → adenylyl cyclase → cAMP (second messenger)</li>
+        <li><strong>Receptor tyrosine kinases (RTK)</strong> — dimerize upon ligand binding; phosphorylate intracellular proteins</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Second Messengers</div>
+      <ul class="bullet">
+        <li><strong>cAMP</strong> — produced by adenylyl cyclase; activates protein kinase A (PKA); amplifies signal</li>
+        <li><strong>IP₃/DAG</strong> — from phospholipase C activation; IP₃ triggers Ca²⁺ release</li>
+        <li><strong>Ca²⁺</strong> — binds calmodulin; activates various kinases</li>
+        <li>Phosphorylation cascades amplify signals exponentially</li>
+        <li>Signal terminated by phosphodiesterase (degrades cAMP) or phosphatases</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cell Cycle Phases</div>
+      <ul class="bullet">
+        <li><strong>G1 (Gap 1)</strong> — cell growth; protein synthesis; checkpoint: is cell large enough? DNA intact?</li>
+        <li><strong>S (Synthesis)</strong> — DNA replication; each chromosome duplicated into 2 sister chromatids</li>
+        <li><strong>G2 (Gap 2)</strong> — growth; prepare for division; checkpoint: DNA fully replicated?</li>
+        <li><strong>M (Mitosis)</strong> — nuclear division (PMAT) + cytokinesis</li>
+        <li><strong>G0</strong> — non-dividing quiescent state (nerve, muscle cells)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Mitosis Stages</div>
+      <ul class="bullet">
+        <li><strong>Prophase</strong> — chromatin condenses; spindle forms; nuclear envelope breaks down</li>
+        <li><strong>Metaphase</strong> — chromosomes align at metaphase plate; kinetochore MTs attach</li>
+        <li><strong>Anaphase</strong> — sister chromatids pulled to opposite poles by spindle fibers</li>
+        <li><strong>Telophase</strong> — nuclear envelopes reform; chromosomes decondense</li>
+        <li><strong>Cytokinesis</strong> — cleavage furrow (animals) or cell plate (plants) divides cytoplasm</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cell Cycle Regulation &amp; Cancer</div>
+      <ul class="bullet">
+        <li><strong>Cyclins</strong> + <strong>CDKs</strong> (cyclin-dependent kinases) — drive the cell cycle forward</li>
+        <li><strong>Checkpoints</strong> — G1, G2, and spindle assembly checkpoint (M); monitor DNA integrity</li>
+        <li><strong>Tumor suppressors</strong> — p53, Rb; slow or stop cell cycle; mutated in cancer</li>
+        <li><strong>Proto-oncogenes</strong> → <strong>oncogenes</strong> when mutated; accelerate cell division</li>
+        <li><strong>Apoptosis</strong> — programmed cell death; activated by cell damage or developmental signals; caspase cascade</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      Be ready to describe how a mutation in a proto-oncogene OR a tumor suppressor can lead to uncontrolled cell division. The exam loves asking: "Predict the effect on the cell cycle if protein X is mutated."
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 5: HEREDITY
+════════════════════════════════════════════════ -->
+<section class="unit u5" id="u5">
+  <div class="unit-header">
+    <div class="unit-number">05</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 5</div>
+      <h2>Heredity</h2>
+    </div>
+    <div class="unit-weight">~8–11% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Meiosis</div>
+      <ul class="bullet">
+        <li>Produces 4 haploid (n) gametes from one diploid (2n) parent cell</li>
+        <li><strong>Meiosis I</strong> — homologous pairs separate (reductive division)</li>
+        <li><strong>Meiosis II</strong> — sister chromatids separate (like mitosis)</li>
+        <li><strong>Crossing over</strong> (prophase I) — homologs exchange segments at chiasmata → genetic recombination</li>
+        <li><strong>Independent assortment</strong> (metaphase I) — random orientation of homolog pairs → 2ⁿ combinations</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Mendelian Genetics</div>
+      <ul class="bullet">
+        <li><strong>Law of Segregation</strong> — allele pairs separate during gamete formation</li>
+        <li><strong>Law of Independent Assortment</strong> — genes on different chromosomes assort independently</li>
+        <li><strong>Monohybrid</strong>: Aa × Aa → 3:1 phenotypic ratio; 1:2:1 genotypic ratio</li>
+        <li><strong>Dihybrid</strong>: AaBb × AaBb → 9:3:3:1 phenotypic ratio</li>
+        <li><strong>Testcross</strong> — unknown phenotype × homozygous recessive to determine genotype</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Non-Mendelian Inheritance</div>
+      <ul class="bullet">
+        <li><strong>Incomplete dominance</strong> — blended phenotype (red × white → pink); Rr is intermediate</li>
+        <li><strong>Codominance</strong> — both alleles fully expressed (AB blood type); no blending</li>
+        <li><strong>Multiple alleles</strong> — ABO blood type has 3 alleles (Iᴬ, Iᴮ, i)</li>
+        <li><strong>Polygenic inheritance</strong> — multiple genes affect one trait (skin color, height); bell-curve distribution</li>
+        <li><strong>Pleiotropy</strong> — one gene affects multiple traits (sickle cell affects many organs)</li>
+        <li><strong>Epistasis</strong> — one gene masks expression of another (9:3:4, 12:3:1, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Sex-Linked Inheritance</div>
+      <ul class="bullet">
+        <li>X-linked traits — gene on X chromosome; males (XY) only have 1 copy → hemizygous</li>
+        <li>X-linked recessive (colorblindness, hemophilia): more common in males</li>
+        <li>Carrier females (Xᴬ Xᵃ) pass trait to 50% of sons</li>
+        <li><strong>Barr bodies</strong> — inactivated X chromosomes in female cells (Lyon hypothesis)</li>
+        <li>Y-linked traits — passed only from father to all sons</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Chromosomal Inheritance</div>
+      <ul class="bullet">
+        <li><strong>Linked genes</strong> — on same chromosome; do NOT independently assort; tend to be inherited together</li>
+        <li><strong>Recombination frequency</strong> — % recombinant offspring; used to map gene distance in centimorgans (cM)</li>
+        <li><strong>Nondisjunction</strong> — failure of chromosomes to separate; produces aneuploid gametes</li>
+        <li>Trisomy 21 (Down syndrome); XXY (Klinefelter); XO (Turner)</li>
+        <li>Chromosomal mutations: deletion, duplication, inversion, translocation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Chi-Square Test</div>
+      <ul class="bullet">
+        <li>Used to determine if observed ratios differ significantly from expected ratios</li>
+        <li>χ² = Σ (O − E)² / E</li>
+        <li>Degrees of freedom = number of classes − 1</li>
+        <li>If χ² &lt; critical value (p = 0.05) → fail to reject null hypothesis (data fits expected ratio)</li>
+        <li>If χ² &gt; critical value → reject null (significant deviation)</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      Practice Punnett squares for dihybrid crosses AND chi-square calculations. Know how to interpret chi-square results and connect to the null hypothesis.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 6: GENE EXPRESSION & REGULATION
+════════════════════════════════════════════════ -->
+<section class="unit u6" id="u6">
+  <div class="unit-header">
+    <div class="unit-number">06</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 6</div>
+      <h2>Gene Expression &amp; Regulation</h2>
+    </div>
+    <div class="unit-weight">~12–16% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">DNA Replication</div>
+      <ul class="bullet">
+        <li><strong>Semiconservative</strong> — each new double helix has one old strand + one new strand</li>
+        <li><strong>Helicase</strong> — unwinds and separates DNA strands at replication fork</li>
+        <li><strong>Primase</strong> — synthesizes short RNA primer to initiate synthesis</li>
+        <li><strong>DNA polymerase III</strong> — adds nucleotides 5′→3′; proofreads</li>
+        <li><strong>Leading strand</strong> — synthesized continuously; <strong>Lagging strand</strong> — synthesized as Okazaki fragments</li>
+        <li><strong>DNA ligase</strong> — joins Okazaki fragments; seals nicks</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Transcription</div>
+      <ul class="bullet">
+        <li>DNA → RNA (in nucleus in eukaryotes)</li>
+        <li><strong>RNA polymerase</strong> binds to <strong>promoter</strong> (TATA box in eukaryotes)</li>
+        <li>Template strand read 3′→5′; mRNA synthesized 5′→3′</li>
+        <li><strong>Pre-mRNA processing</strong> (eukaryotes): 5′ cap added, poly-A tail added, <strong>introns removed</strong>, <strong>exons spliced</strong> together</li>
+        <li>Alternative splicing — same gene can produce different proteins</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Translation</div>
+      <ul class="bullet">
+        <li>mRNA → protein (at ribosomes in cytoplasm)</li>
+        <li><strong>Codons</strong> — 3-nucleotide sequences on mRNA; 64 total; 61 code for amino acids</li>
+        <li><strong>AUG</strong> — start codon (Met); <strong>UAA, UAG, UGA</strong> — stop codons</li>
+        <li><strong>tRNA</strong> — anticodon pairs with codon; carries specific amino acid</li>
+        <li>Ribosome A-P-E sites: A (incoming tRNA), P (peptidyl-tRNA), E (exit)</li>
+        <li>Peptide bond formed; polypeptide elongates until stop codon</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Mutations</div>
+      <ul class="bullet">
+        <li><strong>Point mutations</strong> — single base change</li>
+        <li><strong>Silent</strong> — same amino acid (due to degeneracy of code); no effect</li>
+        <li><strong>Missense</strong> — different amino acid; may alter protein function</li>
+        <li><strong>Nonsense</strong> — premature stop codon; truncated, nonfunctional protein</li>
+        <li><strong>Frameshift</strong> — insertion or deletion shifts reading frame; typically disruptive</li>
+        <li>Mutations in germ cells are heritable; somatic mutations are not</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Gene Regulation in Prokaryotes</div>
+      <ul class="bullet">
+        <li><strong>Operon</strong> — cluster of genes with shared promoter + operator (bacteria)</li>
+        <li><strong>Lac operon</strong> — inducible; repressor normally blocks; lactose (allolactose) inactivates repressor → genes expressed</li>
+        <li><strong>Trp operon</strong> — repressible; tryptophan (corepressor) activates repressor → genes blocked</li>
+        <li><strong>Positive control</strong> — CAP-cAMP activates lac operon when glucose is low</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Gene Regulation in Eukaryotes</div>
+      <ul class="bullet">
+        <li><strong>Chromatin remodeling</strong> — histones modified; DNA accessibility changes</li>
+        <li><strong>DNA methylation</strong> — adds CH₃ to cytosine; silences genes (epigenetic)</li>
+        <li><strong>Histone acetylation</strong> — loosens chromatin → increased transcription</li>
+        <li><strong>Transcription factors</strong> — bind enhancers/silencers; activate or repress RNA polymerase</li>
+        <li><strong>miRNA/siRNA</strong> — small RNAs that silence gene expression post-transcriptionally (RNAi)</li>
+        <li><strong>Epigenetics</strong> — heritable changes in gene expression without DNA sequence changes</li>
+      </ul>
+    </div>
+
+    <div class="card card-wide">
+      <div class="card-title">Biotechnology</div>
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr; margin:0; gap:12px;">
+        <div>
+          <p><strong>PCR</strong> — amplifies specific DNA; denaturation (94°C), annealing (50–60°C), extension (72°C); uses Taq polymerase</p>
+        </div>
+        <div>
+          <p><strong>Gel electrophoresis</strong> — separates DNA/protein by size through agarose gel; smaller fragments migrate farther</p>
+        </div>
+        <div>
+          <p><strong>CRISPR-Cas9</strong> — guide RNA directs Cas9 nuclease to cut specific DNA sequence; enables gene editing</p>
+        </div>
+        <div>
+          <p><strong>Restriction enzymes</strong> — cut DNA at specific palindromic sequences; produce sticky ends for cloning</p>
+        </div>
+        <div>
+          <p><strong>Recombinant DNA</strong> — gene inserted into plasmid vector; transformed into bacteria for protein production (e.g., insulin)</p>
+        </div>
+        <div>
+          <p><strong>DNA sequencing</strong> — Sanger method uses ddNTPs to terminate elongation; produces ladder of fragments</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exam-tip">
+      The central dogma (DNA → RNA → Protein) is foundational. Know the details of each step AND where regulation can occur: transcription initiation, mRNA processing, mRNA stability, translation, and post-translational modification.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 7: NATURAL SELECTION & EVOLUTION
+════════════════════════════════════════════════ -->
+<section class="unit u7" id="u7">
+  <div class="unit-header">
+    <div class="unit-number">07</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 7</div>
+      <h2>Natural Selection &amp; Evolution</h2>
+    </div>
+    <div class="unit-weight">~13–20% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Evidence for Evolution</div>
+      <ul class="bullet">
+        <li><strong>Fossil record</strong> — documents changes in organisms over time; transitional fossils</li>
+        <li><strong>Comparative anatomy</strong> — homologous structures (same origin, different function); vestigial structures</li>
+        <li><strong>Analogous structures</strong> — similar function, different origin = convergent evolution</li>
+        <li><strong>Molecular data</strong> — DNA/protein sequence similarity reflects common ancestry</li>
+        <li><strong>Biogeography</strong> — species distribution patterns reflect evolutionary history</li>
+        <li><strong>Embryology</strong> — similarities in early development among vertebrates</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Natural Selection</div>
+      <ul class="bullet">
+        <li>Requires: heritable variation, differential survival/reproduction, selection pressure</li>
+        <li><strong>Directional selection</strong> — shifts phenotype toward one extreme</li>
+        <li><strong>Stabilizing selection</strong> — favors intermediate phenotype; reduces variation</li>
+        <li><strong>Disruptive selection</strong> — favors extremes over intermediates; increases variation</li>
+        <li><strong>Sexual selection</strong> — traits increase mating success (intrasexual vs. intersexual)</li>
+        <li>Acts on phenotype; changes allele frequencies in population</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Hardy-Weinberg Equilibrium</div>
+      <div class="formula-box">p + q = 1 &nbsp;&nbsp;|&nbsp;&nbsp; p² + 2pq + q² = 1</div>
+      <ul class="bullet">
+        <li>p = dominant allele freq; q = recessive allele freq</li>
+        <li>p² = homozygous dominant; 2pq = heterozygous; q² = homozygous recessive</li>
+        <li><strong>Conditions for HWE</strong>: large population, random mating, no mutation, no migration, no natural selection</li>
+        <li>Useful null hypothesis to test if evolution is occurring</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Mechanisms of Evolution</div>
+      <ul class="bullet">
+        <li><strong>Mutation</strong> — ultimate source of new alleles; random; often neutral</li>
+        <li><strong>Gene flow</strong> — movement of alleles between populations; reduces differences</li>
+        <li><strong>Genetic drift</strong> — random allele frequency changes; stronger in small populations</li>
+        <li><strong>Bottleneck effect</strong> — drastic reduction in population size; loss of variation</li>
+        <li><strong>Founder effect</strong> — small group colonizes new area; limited genetic variation</li>
+        <li><strong>Natural selection</strong> — nonrandom; acts on existing variation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Speciation</div>
+      <ul class="bullet">
+        <li><strong>Biological species concept</strong> — species = group that can interbreed and produce fertile offspring</li>
+        <li><strong>Allopatric speciation</strong> — geographic isolation leads to reproductive isolation; most common</li>
+        <li><strong>Sympatric speciation</strong> — speciation without geographic barrier (polyploidy in plants, niche differentiation)</li>
+        <li><strong>Reproductive isolating mechanisms</strong>: prezygotic (behavioral, temporal, mechanical, gametic, habitat) and postzygotic (hybrid sterility, hybrid inviability)</li>
+        <li><strong>Polyploidy</strong> — extra sets of chromosomes; instant speciation in plants</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Phylogenetics &amp; Cladistics</div>
+      <ul class="bullet">
+        <li><strong>Cladogram</strong> / <strong>phylogenetic tree</strong> — shows evolutionary relationships based on shared derived characters</li>
+        <li><strong>Clade (monophyletic group)</strong> — ancestor + ALL descendants</li>
+        <li><strong>Synapomorphies</strong> — shared derived characters; define clades</li>
+        <li><strong>Parsimony</strong> — simplest tree (fewest evolutionary changes) preferred</li>
+        <li><strong>Molecular clocks</strong> — mutation rates used to estimate divergence times</li>
+        <li>3 domains: Bacteria, Archaea, Eukarya</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      Hardy-Weinberg calculations are almost always on the AP exam. Practice: given q² (homozygous recessive frequency), find q, then p, then 2pq (carrier frequency). Also know how to interpret and draw cladograms.
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     UNIT 8: ECOLOGY
+════════════════════════════════════════════════ -->
+<section class="unit u8" id="u8">
+  <div class="unit-header">
+    <div class="unit-number">08</div>
+    <div class="unit-title-block">
+      <div class="unit-label">Unit 8</div>
+      <h2>Ecology</h2>
+    </div>
+    <div class="unit-weight">~10–15% of Exam</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Levels of Ecological Organization</div>
+      <ul class="bullet">
+        <li><strong>Individual → Population → Community → Ecosystem → Biome → Biosphere</strong></li>
+        <li><strong>Population</strong> — same species in one area; density, distribution, age structure</li>
+        <li><strong>Community</strong> — all species in an area; interactions, diversity</li>
+        <li><strong>Ecosystem</strong> — community + abiotic factors; energy flow, nutrient cycles</li>
+        <li>Abiotic factors: temperature, light, water, nutrients, pH, salinity</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Population Ecology</div>
+      <ul class="bullet">
+        <li><strong>Exponential growth</strong> — unlimited resources; J-shaped curve; dN/dt = rN</li>
+        <li><strong>Logistic growth</strong> — limited resources; S-shaped curve; dN/dt = rN(K−N/K)</li>
+        <li><strong>Carrying capacity (K)</strong> — max sustainable population size in an environment</li>
+        <li><strong>r-selected species</strong> — many small offspring, little parental care, unstable environments</li>
+        <li><strong>K-selected species</strong> — few offspring, high parental care, stable environments</li>
+        <li><strong>Age structure diagrams</strong> — predict future population growth</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Survivorship Curves</div>
+      <ul class="bullet">
+        <li><strong>Type I</strong> — low early mortality, most die old (humans, large mammals)</li>
+        <li><strong>Type II</strong> — constant mortality rate throughout life (birds, rodents)</li>
+        <li><strong>Type III</strong> — high early mortality; survivors live long (fish, trees, insects)</li>
+        <li>Reflects life history strategy and parental investment</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Species Interactions</div>
+      <ul class="bullet">
+        <li><strong>Predation</strong> (+/−) — drives coevolution; prey adaptations (crypsis, mimicry, warning coloration)</li>
+        <li><strong>Competition</strong> (−/−) — interspecific: between species; intraspecific: within species</li>
+        <li><strong>Competitive exclusion</strong> — two species cannot occupy same niche indefinitely</li>
+        <li><strong>Character displacement</strong> — species diverge in sympatry to reduce competition</li>
+        <li><strong>Mutualism</strong> (+/+) — mycorrhizae, nitrogen-fixing bacteria, cleaner fish</li>
+        <li><strong>Commensalism</strong> (+/0) — barnacles on whales, epiphytes</li>
+        <li><strong>Parasitism</strong> (+/−) — parasite benefits, host harmed</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Community Ecology</div>
+      <ul class="bullet">
+        <li><strong>Keystone species</strong> — disproportionate effect on community; removal causes trophic cascade</li>
+        <li><strong>Ecological succession</strong>: Primary (bare rock → mature forest); Secondary (disturbed area with soil)</li>
+        <li><strong>Pioneer species</strong> — first to colonize; lichens, mosses</li>
+        <li><strong>Climax community</strong> — stable end stage of succession</li>
+        <li><strong>Biodiversity</strong> — species richness + evenness; increases ecosystem stability and resilience</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Energy Flow in Ecosystems</div>
+      <ul class="bullet">
+        <li><strong>Trophic levels</strong>: producers → primary consumers → secondary → tertiary</li>
+        <li><strong>10% rule</strong> — only ~10% of energy transferred between trophic levels (rest lost as heat)</li>
+        <li><strong>Gross primary productivity (GPP)</strong> — total photosynthesis</li>
+        <li><strong>Net primary productivity (NPP)</strong> = GPP − respiration</li>
+        <li>Food webs show complex energy pathways; more links = greater stability</li>
+        <li>Decomposers (bacteria/fungi) recycle nutrients from dead organic matter</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Biogeochemical Cycles</div>
+      <ul class="bullet">
+        <li><strong>Carbon cycle</strong> — photosynthesis (fixes CO₂), respiration (releases CO₂), decomposition, combustion</li>
+        <li><strong>Nitrogen cycle</strong> — N₂ fixation (Rhizobium), nitrification, assimilation, denitrification, ammonification</li>
+        <li><strong>Phosphorus cycle</strong> — no gaseous phase; weathering of rocks; phosphate taken up by plants</li>
+        <li><strong>Water cycle</strong> — evaporation, transpiration, precipitation, runoff, groundwater</li>
+        <li><strong>Eutrophication</strong> — excess N &amp; P → algal blooms → O₂ depletion → dead zones</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Global Change &amp; Conservation</div>
+      <ul class="bullet">
+        <li><strong>Climate change</strong> — rising CO₂ from fossil fuels; greenhouse effect; ocean acidification</li>
+        <li><strong>Habitat fragmentation</strong> — reduces biodiversity; increases extinction risk (island biogeography)</li>
+        <li><strong>Invasive species</strong> — outcompete natives; lack natural predators</li>
+        <li><strong>Biological magnification</strong> — toxin concentration increases up food chain (DDT, mercury)</li>
+        <li><strong>Island biogeography</strong> — species richness ∝ island size and proximity to mainland</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      Know how to calculate NPP and interpret energy flow diagrams. Ecological hierarchy questions often appear as data analysis: be ready to explain population growth curves, survivorship graphs, and food web diagrams using evidence.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  AP Biology · Units 1–8 · All Rights Reserved · Study Hard, Score 5
+</footer>
+
+</body>
+</html>

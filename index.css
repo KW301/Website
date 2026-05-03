@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    font-size: large;
+    font-size: 150%;
 }
 #Topic{
     text-shadow: -5px -5px lightgrey;
@@ -9,6 +9,10 @@ body{
     text-shadow: 3px 3px red, -3px -3px blue;
 }
 #Bio{
+    font-size: x-large;
+    text-shadow: -3px -3px lightgrey;
+}
+#Claude{
     font-size: x-large;
     text-shadow: -3px -3px lightgrey;
 }
